@@ -26,12 +26,12 @@ const counterReducer = (state = 0, action) =>{
     }
 };
 
-const appReduser = combineReducers({
-    counter: counterReducer,
-})
+// const appReduser = combineReducers({
+//     counter: counterReducer,
+// })
 
 
-export const store = createStore(appReduser,
+export const store = createStore(counterReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
