@@ -1,6 +1,7 @@
+import { createStore, combineReducers } from 'redux';
 
-export const INCREMENT = 'COUNTER/INCREMENT';
-export const DECREMENT = 'COUNTER/DECREMENT';
+const INCREMENT = 'COUNTER/INCREMENT';
+const DECREMENT = 'COUNTER/DECREMENT';
 
 export const increment = () => {
     return {
@@ -14,7 +15,7 @@ export const decrement = () => {
     }
 };
 
-export const counterReducer = (state = 0, action) =>{
+const counterReducer = (state = 0, action) =>{
     switch(action.type){
         case INCREMENT:
             return state + 1;
@@ -24,6 +25,17 @@ export const counterReducer = (state = 0, action) =>{
             return state;
     }
 };
+
+const appReduser = combineReducers({
+    counter: counterReducer,
+})
+
+
+export const store = createStore(appReduser,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+
 
 
 
