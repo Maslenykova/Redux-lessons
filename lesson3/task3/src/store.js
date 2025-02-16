@@ -5,12 +5,11 @@ import { productReducer } from './cart.reducer';
 
 
 const appReduser = combineReducers({
-    language: setLanguageReduser,
+     language: setLanguageReduser,
      user: userReducer,
      cart: productReducer,
   
 })
-
 
 
 const store = createStore(appReduser,
