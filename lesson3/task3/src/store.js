@@ -1,11 +1,11 @@
 import { createStore, combineReducers } from 'redux';
+import {setLanguageReduser} from './language.reducer';
 import {userReducer} from './user.reducer';
 import { productReducer } from './cart.reducer';
-import {setLanguageReduser} from './language.reducer';
 
 
 const appReduser = combineReducers({
-    lenguage: setLanguageReduser,
+    language: setLanguageReduser,
     user : userReducer,
     cart: productReducer,
 })
@@ -15,5 +15,6 @@ const appReduser = combineReducers({
 const store = createStore(appReduser,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+
 
 export default store;

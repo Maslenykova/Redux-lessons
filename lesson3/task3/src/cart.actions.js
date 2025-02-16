@@ -1,6 +1,6 @@
 
 export const ADD_PRODUCT = 'USERS/ADD_PRODUCT ';
-export const DELETE_PRODUCT = 'USERS/DELETE_PRODUCT';
+export const REMOVE_PRODUCT = 'USERS/REMOVE_PRODUCT';
 
 
 
@@ -13,9 +13,9 @@ export const addProduct = (productData) =>{
     }
 }
 
-export const deleteProduct = (productId) =>{
+export const removeProduct = (productId) =>{
     return{
-        type: DELETE_PRODUCT,
+        type: REMOVE_PRODUCT,
         payload: {
             productId
         }
