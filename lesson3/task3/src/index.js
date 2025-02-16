@@ -7,7 +7,6 @@ console.log(store.getState());
 
 store.subscribe(()=>console.log(store.getState()));
 
-store.dispatch(setUser( { name: 'Sarah'} )); 
 store.dispatch(setUser({ name: 'Anna' })); 
 store.dispatch(removeUser()); 
 

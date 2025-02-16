@@ -9,13 +9,13 @@ export const userReducer = (state = initialState, action) =>{
         case SET_USER: {
             return {
                 ...state,
-                user: action.payload.userData, 
+                user: action.payload.user, 
             }
         }
         case REMOVE_USER: {
             return {
                 ...state,
-                user: {},
+                user: null,
             }
         }
         default:
