@@ -1,7 +1,8 @@
 import {ADD_PRODUCT, DELETE_PRODUCT} from './cart.actions';
 
 const initialState = {
-    products: [],
+     products: [],
+    
 };
 
 export const productReducer = (state = initialState, action) =>{
