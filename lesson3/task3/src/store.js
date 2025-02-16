@@ -5,9 +5,9 @@ import {setLanguageReduser} from './language.reducer';
 
 
 const appReduser = combineReducers({
-    users : userReducer,
-    cart: productReducer,
     lenguage: setLanguageReduser,
+    user : userReducer,
+    cart: productReducer,
 })
 
 

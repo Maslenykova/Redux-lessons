@@ -12,12 +12,9 @@ export const setUser = (userData) =>{
 }
 
 
-export const removeUser = (userName) =>{
+export const removeUser = () =>{
     return{
         type: REMOVE_USER,
-        payload: {
-            userName,
-        }
-       
+        
     }
 }
