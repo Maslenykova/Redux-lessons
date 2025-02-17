@@ -4,7 +4,8 @@ export const setLanguageReduser = (state = 'en', action) =>{
     switch(action.type){
         case SET_LANGUAGE:
             return {
-                language: action.payload.language,
+                // ...state,
+                language: action.payload,
         }
         default:
             return state;

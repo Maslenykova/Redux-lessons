@@ -15,3 +15,6 @@ store.dispatch(addProduct({ id: 89, name: 'bread'}));
 store.dispatch(removeProduct(89)); 
 
 store.dispatch(setLanguage({language:'jp'})); 
+store.dispatch(setLanguage({language:'ua'})); 
+store.dispatch(setLanguage({language:'en'})); 
+
