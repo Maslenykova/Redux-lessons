@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import * as counterAction from "./counter.actions";
+import * as counterAction from "./store";
 
 const Counter = ({counter, decrement, increment, reset}) =>{
     return(
