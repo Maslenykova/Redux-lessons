@@ -48,3 +48,6 @@ body {
   cursor: pointer;
   background-color: green;
 }
+.btn.hidden {
+  visibility: hidden; /* Скрывает кнопку, но оставляет место */
+}
