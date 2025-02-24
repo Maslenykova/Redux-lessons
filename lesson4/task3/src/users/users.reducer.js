@@ -1,9 +1,10 @@
 import { SET_USERS, SET_PAGE } from './users.actions';
+import { users } from './users';
 
 const initialState = {
-    usersList: [],
+    usersList: users,
     currentPage: 0,
-};
+  };
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
