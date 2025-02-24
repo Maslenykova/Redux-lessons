@@ -11,7 +11,7 @@ const Pagination = ({ goPrev, goNext, currentPage, totalItems, itemsPerPage }) =
                 onClick={goPrev}
                 disabled={isPrevPageAvailable}
             >
-                {"←"}
+                ←
             </button>
 
             <span className="pagination__page">{currentPage + 1}</span>
@@ -20,7 +20,7 @@ const Pagination = ({ goPrev, goNext, currentPage, totalItems, itemsPerPage }) =
                 onClick={goNext}
                 disabled={isNextPageAvailable}
             >
-                {"→"}
+                →
             </button>
         </div>
     );
