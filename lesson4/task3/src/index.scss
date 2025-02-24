@@ -48,3 +48,7 @@ body {
   cursor: pointer;
   background-color: green;
 }
+.btn:disabled {
+  visibility: hidden;
+  cursor: not-allowed;
+}
