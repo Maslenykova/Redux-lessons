@@ -1,17 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Pagination from './Pagination';
-import { setPage } from './users.actions';
+import { goPrevPage, goNextPage } from './users.actions';
 import User from './User';
+import { users } from './users';
 
 const ITEMS_PER_PAGE = 3;
 
-const UsersList = ({ users, currentPage, setPage }) => {
+const UsersList = ({ currentPage, goNext, goPrev }) => {
     const startIndex = currentPage * ITEMS_PER_PAGE;
     const paginatedUsers = users.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-    const goNext = () => setPage(currentPage + 1);
-    const goPrev = () => setPage(currentPage - 1);
 
     return (
         <div className="users-list">
@@ -33,13 +31,14 @@ const UsersList = ({ users, currentPage, setPage }) => {
     );
 };
 
-const mapStateToProps = (state) => ({
+const mapState = (state) => ({
     users: state.users.usersList,
     currentPage: state.users.currentPage,
 });
 
-const mapDispatchToProps = {
-    setPage,
-};
+const mapDispatch = {
+    goPrev: goPrevPage,
+    goNext: goNextPage,
+  };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersList);
+export default connect(mapState, mapDispatch)(UsersList);

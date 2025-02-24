@@ -1,4 +1,4 @@
-import { SET_USERS, SET_PAGE } from './users.actions';
+import { SET_USERS, SET_PAGE, GO_NEXT, GO_PREV } from './users.actions';
 import { users } from './users';
 
 const initialState = {
@@ -18,6 +18,15 @@ const usersReducer = (state = initialState, action) => {
             ...state,
             currentPage: action.payload,
         };
+    case GO_NEXT:
+        return {
+        currentPage: state.currentPage + 1
+    }
+    case GO_PREV: 
+    return{
+        currentPage: state.currentPage - 1
+    }
+    
     default:
         return state;
 }
