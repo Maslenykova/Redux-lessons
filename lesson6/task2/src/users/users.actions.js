@@ -1,4 +1,4 @@
-import { getUserData } from './users.geteway';
+
 
 export const SHOW_SPINNER = 'SHOW_SPINNER';
 export const USER_DATA_RECEVED = 'USER_DATA_RECEVED';
@@ -18,11 +18,11 @@ export const userDataRecieved = (userData) =>{
     };
  };
 
- export const fetchUserData = (userName) =>{
-    return function(dispatch) {
-        dispatch(showSpinner())
-        getUserData(userName).then(userData =>{
-            dispatch(userDataRecieved(userData));
-           })
-    }
- }
+//  export const fetchUserData = (userName) =>{
+//     return function(dispatch) {
+//         dispatch(showSpinner())
+//         getUserData(userName).then(userData =>{
+//             dispatch(userDataRecieved(userData));
+//            })
+//     }
+//  }

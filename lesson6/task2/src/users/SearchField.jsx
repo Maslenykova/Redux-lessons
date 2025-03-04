@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import * as usersActions from './users.actions';
-// import { fetchUserData} from './users.actions';
+import { getUserData } from './users.geteway';
+import { fetchUserData} from './users.actions';
 
 
 class SearchField  extends Component{
@@ -15,8 +16,10 @@ class SearchField  extends Component{
     };
 
     handleUserSearch = () => {
-    //    this.props.showSpinner();
-       this.props.fetchUserData(this.state.userName);
+       this.props.showSpinner();
+       getUserData(this.state.userName).then(userData =>{
+                    this.props.userDataRecieved(userData);
+                   })
     };
 
     render(){
@@ -36,8 +39,8 @@ SearchField.propTypes = {
     showSpinner: PropTypes.func.isRequired,
 }
 const mapDispatch = {
-    // showSpinner: usersActions.showSpinner,
-    // userDataRecieved: usersActions.userDataRecieved,
-    fetchUserData: usersActions.fetchUserData,
+    showSpinner: usersActions.showSpinner,
+    userDataRecieved: usersActions.userDataRecieved,
+    // fetchUserData: usersActions.fetchUserData,
 }
 export default connect(null, mapDispatch)(SearchField);
