@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchCityData } from './weather.action';
+// import { fetchCityData } from './weather.action';
+import { getWeatherData } from './weather.action';
 import { citiesDataSelector } from './weather.selectors';
 
-const Weather = ({ cities, fetchCityData }) => {
-    useEffect(() => {
-        fetchCityData();
-    }, [fetchCityData]);
-    // (city.temperature * 9/5)+32
+const Weather = ({ cities,  getWeatherData }) => {
+    useEffect(()=>{
+        getWeatherData()
+    }, [ getWeatherData])
+   
     return (
         <main className="weather">
             <h1 className="weather__title">Weather data</h1>
@@ -29,7 +30,7 @@ const Weather = ({ cities, fetchCityData }) => {
 
 Weather.propTypes = {
     cities: PropTypes.array.isRequired,
-    fetchCityData: PropTypes.func.isRequired,
+    getWeatherData: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -37,7 +38,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-    fetchCityData,
+    getWeatherData,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Weather);
