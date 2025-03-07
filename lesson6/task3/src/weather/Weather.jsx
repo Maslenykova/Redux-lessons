@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { fetchCityData } from './weather.action';
-import { getWeatherData } from './weather.action';
+import { getWeatherData } from './weather.actions';
 import { citiesDataSelector } from './weather.selectors';
 
 const Weather = ({ cities,  getWeatherData }) => {

@@ -1,4 +1,4 @@
-import { CITY_DATA_RECEIVED } from './weather.action';
+import { CITY_DATA_RECEIVED } from './weather.actions';
 
 const initialData = {
     cityData: [],
